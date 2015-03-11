@@ -22,4 +22,3 @@ permissions:
     description: Gives access to open the GUI.
   tobimotd.timer:
     description: Gives access to the timer commands.
-Testing commiting
