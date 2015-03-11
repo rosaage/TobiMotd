@@ -3,4 +3,5 @@ target/
 *.jar
 *.war
 *.ear
+.settings/
 hs_err_pid*
