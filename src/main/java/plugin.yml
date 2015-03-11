@@ -1,0 +1,24 @@
+name: TobiMotd
+main: com.rosaage.Tobi.TobiMotd
+author: rosaage
+version: 2.8
+commands:
+ tm:
+    description: The main command, /tm help for more.
+ motd:
+    description: Show the Motd.
+ setmotd:
+    description: Set the Motd.
+    permission: tobimotd.set
+ TobiGUI:
+    description: Open the TobiGUI.
+    permission: tobimotd.TobiGUI
+permissions:
+  tobimotd.reload:
+    description: Gives access to reload Tobi Motd.
+  tobimotd.set:
+    description: Gives access to set the Motd.
+  tobimotd.TobiGUI:
+    description: Gives access to open the GUI.
+  tobimotd.timer:
+    description: Gives access to the timer commands.
