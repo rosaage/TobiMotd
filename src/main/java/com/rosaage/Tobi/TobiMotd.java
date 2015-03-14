@@ -262,7 +262,7 @@ System.out.println(Enabled);
 public void updateG() {
 	TA_1.removeAll();
 	for (String str : config.getStringList("Timer.Timer Message")) {
-		TA_1.append(str);
+		TA_1.append(str + System.getProperty("line.separator"));
 	}
     if(config.getBoolean("Timer.Output to console")){
     	chckbxOutputToConsole.setSelected(true);
@@ -385,7 +385,7 @@ public JPanel panelG(){
     panel.add(scrollPane_2);
     TA_1.removeAll();
 	for (String str : config.getStringList("Timer.Timer Message")) {
-		TA_1.append(str);
+		TA_1.append(str + System.getProperty("line.separator"));
 	}
     //scrollpane labellabel
     JLabel lblTimerMessages = new JLabel("Timer Messages:");
