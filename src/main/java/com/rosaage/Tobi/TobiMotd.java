@@ -163,10 +163,11 @@ getCommand("tm").setExecutor(new CommandExecutor(){
 								if (args.length >= 3) {
 									List<String> message = config.getStringList("Timer.Timer Message");
 						    		if ((Integer.parseInt(args[2]) >= 0) && (Integer.parseInt(args[2]) < message.size()) && (message.size() != 0)) {
+						    			String str2 = message.get(Integer.parseInt(args[2]));
 						    			message.remove(Integer.parseInt(args[2]));
 						    			config.set("Timer.Timer Message", message);
 						    			saveConfig();
-						    			sender.sendMessage("Removed: " + message.get(Integer.parseInt(args[2])));
+						    			sender.sendMessage("Removed: " + str2);
 						    		} else if (Integer.parseInt(args[2]) >= message.size()) {
 						    			sender.sendMessage(ChatColor.RED + "Number is too high!");
 						    		} else {
@@ -195,6 +196,9 @@ getCommand("tm").setExecutor(new CommandExecutor(){
 							}
 							RestartTimer();
 							return true;
+						} else {
+							sender.sendMessage(ChatColor.RED + "Type /tm help for info on how to use this command");
+		    				return true;
 						}
 					} else{
 	    				sender.sendMessage(ChatColor.RED + "You need the permission tobimotd.timer or be op to use this command!");
@@ -256,10 +260,10 @@ getCommand("TobiGUI").setExecutor(new CommandExecutor(){
 System.out.println(Enabled);
 }
 public void updateG() {
-	TA_1.setText("");
-    for (int T = 0; T < config.getList("Timer.Timer Message").size(); T++) {
-    	TA_1.append(config.getList("Timer.Timer Message").get(T) + "\n");
-    }
+	TA_1.removeAll();
+	for (String str : config.getStringList("Timer.Timer Message")) {
+		TA_1.append(str);
+	}
     if(config.getBoolean("Timer.Output to console")){
     	chckbxOutputToConsole.setSelected(true);
     }
