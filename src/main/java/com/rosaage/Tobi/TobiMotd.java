@@ -414,17 +414,6 @@ public void TobiGUI() {
     frame.setVisible(true);
 }
 
-String on () {
-	StringBuilder players = new StringBuilder();
-
-	for (Player player : Bukkit.getOnlinePlayers()) {
-		if (players.length() > 0) {
-			players.append(", ");
-		}
-		players.append(player.getDisplayName());
-	}
-	return players.toString();
-}
 private void RestartTimer() {
 	final FileConfiguration config = this.getConfig();
 	if(config.getBoolean("Timer.Timer Enabled") == true) {
@@ -454,7 +443,7 @@ private void Starttimer() {
 					  for(int x=0 ; x<messag.length ; x++) {
 						getServer().getConsoleSender().sendMessage(messag[x].replaceAll("(&([a-f0-9]))", "\u00A7$2").replaceAll("%NAME%", getServer().getConsoleSender().getName())
 									.replaceAll("%TIME%", hours + ":" + minutes).replaceAll("%VERSION%",getServer().getBukkitVersion())
-									.replaceAll("%WORLD%", world.getName()).replaceAll("%ONLINE%", on()).replaceAll("%I%", ChatColor.ITALIC + "")
+									.replaceAll("%WORLD%", world.getName()).replaceAll("%ONLINE%", list(getServer().getConsoleSender())).replaceAll("%I%", ChatColor.ITALIC + "")
 									.replaceAll("%B%", ChatColor.BOLD + "").replaceAll("%ST%", ChatColor.STRIKETHROUGH + "").replaceAll("%M%", ChatColor.MAGIC + "")
 									.replaceAll("%UL%", ChatColor.UNDERLINE + "").replaceAll("%D%", ChatColor.RESET + "")
 									.replaceAll("%PAMOUNT%", Integer.toString(Bukkit.getOnlinePlayers().length)));
