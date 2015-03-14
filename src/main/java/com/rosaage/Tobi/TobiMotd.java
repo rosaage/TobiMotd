@@ -383,10 +383,10 @@ public JPanel panelG(){
     TA_1 = new JTextArea();
     scrollPane_2.setViewportView(TA_1);
     panel.add(scrollPane_2);
-    TA_1.setText("");
-    for (int T = 0; T < config.getList("Timer.Timer Message").size(); T++) {
-    	TA_1.append(config.getList("Timer.Timer Message").get(T) + "\n");
-    }
+    TA_1.removeAll();
+	for (String str : config.getStringList("Timer.Timer Message")) {
+		TA_1.append(str);
+	}
     //scrollpane labellabel
     JLabel lblTimerMessages = new JLabel("Timer Messages:");
     scrollPane_2.setColumnHeaderView(lblTimerMessages);
