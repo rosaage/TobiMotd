@@ -260,7 +260,7 @@ getCommand("TobiGUI").setExecutor(new CommandExecutor(){
 System.out.println(Enabled);
 }
 public void updateG() {
-	TA_1.removeAll();
+	TA_1.setText(null);
 	for (String str : config.getStringList("Timer.Timer Message")) {
 		TA_1.append(str + System.getProperty("line.separator"));
 	}
@@ -383,7 +383,7 @@ public JPanel panelG(){
     TA_1 = new JTextArea();
     scrollPane_2.setViewportView(TA_1);
     panel.add(scrollPane_2);
-    TA_1.removeAll();
+    TA_1.setText(null);
 	for (String str : config.getStringList("Timer.Timer Message")) {
 		TA_1.append(str + System.getProperty("line.separator"));
 	}
