@@ -156,9 +156,11 @@ getCommand("tm").setExecutor(new CommandExecutor(){
 								config.set("Timer.Timer Message", message);
 								saveConfig();
 							} else if (args[1].equalsIgnoreCase("list")){
-								for (int T = 0; T < config.getList("Timer.Timer Message").size(); T++) {
-							    	sender.sendMessage( T + " - " + (String) config.getList("Timer.Timer Message").get(T));
-							    }
+								int T = 0;
+								for (String str : config.getStringList("Timer.Timer Message")) {
+									sender.sendMessage(T + " - " + str);
+									T++;
+								}
 							} else if (args[1].equalsIgnoreCase("remove")){
 								if (args.length >= 3) {
 									List<String> message = config.getStringList("Timer.Timer Message");
@@ -260,9 +262,11 @@ getCommand("TobiGUI").setExecutor(new CommandExecutor(){
 System.out.println(Enabled);
 }
 public void updateG() {
+	reloadConfig();
+	config = getConfig();
 	TA_1.setText(null);
 	for (String str : config.getStringList("Timer.Timer Message")) {
-		TA_1.append(str + System.getProperty("line.separator"));
+		TA_1.append(str + "\n");
 	}
     if(config.getBoolean("Timer.Output to console")){
     	chckbxOutputToConsole.setSelected(true);
@@ -331,6 +335,7 @@ public JPanel panelG(){
             	config.set("Timer.Timer Minutes", Integer.parseInt(textField.getText()));
             	config.set("Timer.Timer Seconds", Integer.parseInt(textField_1.getText()));
             	config.set("Timer.Timer Ticks", Integer.parseInt(textField_2.getText()));
+            	config.set("Timer.Timer Message", TA_1.getText().split("\\n"));
             	if (chckbxTimerEnabled.isSelected()) {
             		config.set("Timer.Timer Enabled", true);
             	}else{
@@ -341,7 +346,6 @@ public JPanel panelG(){
             	}else{
             		config.set("Timer.Output to console", false);
             	}
-            	config.set("Timer.Timer Message", TA_1.getText().split("\\n"));
             	saveConfig();
 				reloadConfig();
 				updateG();
@@ -385,7 +389,7 @@ public JPanel panelG(){
     panel.add(scrollPane_2);
     TA_1.setText(null);
 	for (String str : config.getStringList("Timer.Timer Message")) {
-		TA_1.append(str + System.getProperty("line.separator"));
+		TA_1.append(str + "\n");
 	}
     //scrollpane labellabel
     JLabel lblTimerMessages = new JLabel("Timer Messages:");
