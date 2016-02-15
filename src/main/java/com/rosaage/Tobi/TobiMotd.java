@@ -45,8 +45,8 @@ public class TobiMotd extends JavaPlugin implements Listener {
 	private JCheckBox chckbxOutputToConsole;
 	private JCheckBox chckbxTimerEnabled;
 	private FileConfiguration config = getConfig();
-	private String Enabled = "[TobiMotd] v2.8 is enabled!";
-	private String Disabled = "[TobiMotd] v2.8 is disabled!";
+	private String Enabled = "[TobiMotd] v2.9 is enabled!";
+	private String Disabled = "[TobiMotd] v2.9 is disabled!";
 	
 	public void onDisable() {
 		System.out.println(Disabled);

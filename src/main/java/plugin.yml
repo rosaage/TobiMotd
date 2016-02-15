@@ -1,7 +1,7 @@
 name: TobiMotd
 main: com.rosaage.Tobi.TobiMotd
 author: rosaage
-version: 2.8
+version: 2.9
 commands:
  tm:
     description: The main command, /tm help for more.

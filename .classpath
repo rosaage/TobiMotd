@@ -3,7 +3,7 @@
 	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
-	<classpathentry kind="lib" path="F:/Dokumenter/Library/target/bukkit-1.7.9-R0.2.jar"/>
 	<classpathentry kind="lib" path="F:/Dokumenter/Library/target/Pail.jar"/>
+	<classpathentry kind="lib" path="F:/Dokumenter/Library/target/craftbukkit-1.8.8.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
