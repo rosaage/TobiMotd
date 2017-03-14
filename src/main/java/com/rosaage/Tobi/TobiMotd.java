@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import me.escapeNT.pail.Pail;
+// Pail Support temporarily removed - import me.escapeNT.pail.Pail;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -45,8 +45,8 @@ public class TobiMotd extends JavaPlugin implements Listener {
 	private JCheckBox chckbxOutputToConsole;
 	private JCheckBox chckbxTimerEnabled;
 	private FileConfiguration config = getConfig();
-	private String Enabled = "[TobiMotd] v2.9 is enabled!";
-	private String Disabled = "[TobiMotd] v2.9 is disabled!";
+	private String Enabled = "[TobiMotd] v3.0 is enabled!";
+	private String Disabled = "[TobiMotd] v3.0 is disabled!";
 	
 	public void onDisable() {
 		System.out.println(Disabled);
@@ -514,7 +514,7 @@ public class TobiMotd extends JavaPlugin implements Listener {
 	private void checkifpail() {
 	    final PluginManager pm = getServer().getPluginManager();
 	    if (pm.isPluginEnabled("Pail")) {
-	        ((Pail)pm.getPlugin("Pail")).loadInterfaceComponent("TobiMotd", panelG());
+	    	// Pail Support temporarily removed - ((Pail)pm.getPlugin("Pail")).loadInterfaceComponent("TobiMotd", panelG());
 	        System.out.println("[TobiMotd] " + "Done!");
 	    }
 	    else {
