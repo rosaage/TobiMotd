@@ -12,8 +12,5 @@ A bukkit plugin, for more info:
 
 #### Exporting to jar
 ```
-* Right click on the project, Export
-* Choose "JAR File" under Java
-* Choose a good location to save the new .jar file
-* Click next until it asks for a manifest file, choose the manifest.mf file
+* Build with maven
 ```
